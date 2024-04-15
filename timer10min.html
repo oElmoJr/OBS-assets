@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="break">
+      <h3 class="h3">Break</h3>
+      <h1 id="timer">10:00</h1>
+    </div>
+
+    <audio id="alarm" src="assets/alarm.m4a" preload="auto"></audio>
+  </body>
+  <script>
+    // Função para formatar o tempo em minutos e segundos
+    function formatTime(minutes, seconds) {
+      return `${minutes.toString().padStart(2, "0")}:${seconds
+        .toString()
+        .padStart(2, "0")}`;
+    }
+
+    // Função para atualizar o contador
+    function updateTimer() {
+      const timerElement = document.getElementById("timer");
+
+      // Obter os minutos e segundos restantes
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+
+      // Atualizar o texto do contador
+      timerElement.textContent = formatTime(minutes, seconds);
+
+      // Se o tempo acabar, parar o contador
+      if (timeLeft === 0) {
+        clearInterval(timerInterval);
+        timerElement.textContent = "00:00"; // Mostrar "00:00" quando o tempo acabar
+        playAlarm(); // Tocar o alarme
+      } else {
+        // Decrementar o tempo restante apenas se não for zero
+        timeLeft--;
+      }
+    }
+
+    // Função para tocar o alarme
+    function playAlarm() {
+      const alarm = document.getElementById("alarm");
+      alarm.play();
+    }
+
+    // Definir o tempo inicial em segundos (10 minutos)
+    let timeLeft = 10 * 60;
+
+    // Atualizar o contador a cada segundo
+    const timerInterval = setInterval(updateTimer, 1000);
+  </script>
+</html>

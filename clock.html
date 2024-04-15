@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="clock"></h1>
+    <h3 id="ampm"></h3>
+  </body>
+  <script>
+    // Função para formatar a hora no formato de 12 horas
+    function formatTime(hours, minutes) {
+      const ampmElement = document.getElementById("ampm");
+
+      const ampm = hours >= 12 ? "PM" : "AM";
+      const twelveHourFormat = hours % 12 || 12; // Converte as 24 horas para o formato de 12 horas
+
+      ampmElement.textContent = ampm;
+
+      return `${twelveHourFormat.toString().padStart(2, "0")}:${minutes
+        .toString()
+        .padStart(2, "0")}`;
+    }
+
+    // Função para atualizar o relógio
+    function updateClock() {
+      const clockElement = document.getElementById("clock");
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const formattedTime = formatTime(hours, minutes);
+      clockElement.textContent = formattedTime;
+    }
+
+    // Atualizar o relógio a cada minuto (para evitar a atualização constante)
+    updateClock(); // Atualiza imediatamente para evitar um atraso de 1 minuto no início
+    setInterval(updateClock, 60000); // Atualiza a cada minuto
+  </script>
+</html>
