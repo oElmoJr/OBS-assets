@@ -35,7 +35,7 @@
       counterinit++;
       counterElement.textContent = `[${counterinit
         .toString()
-        .padStart(2, "0")}/10]`;
+        .padStart(2, "0")}/??]`;
 
       document.getElementsByClassName("counter")[0].disabled = true;
       localStorage.setItem("counter", counterinit);
