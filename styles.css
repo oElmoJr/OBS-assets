@@ -1,10 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
-* {
-  margin: 0;
+*, h1, h2, h3, div {
+  margin-block: 0;
+  margin-inline: 0;
   padding: 0;
+
   box-sizing: border-box;
-  font-family: "Calistoga";
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  box-sizing: border-box;
 }
 
 html {
@@ -15,6 +19,9 @@ body {
   background-color: rgb(73, 73, 73);
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+
+  text-shadow: black 5px 5px 20px;
 }
 
 .focus,
@@ -24,15 +31,15 @@ body {
   justify-content: flex-start;
   align-items: baseline;
   gap: 2rem;
-
-  text-shadow: black 5px 5px 20px;
 }
 
 h1 {
   /* background-color: aqua; */
   font-size: 20rem;
   color: #ffcc00;
-  line-height: 1em;
+  line-height: 0.6em;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .h3 {
