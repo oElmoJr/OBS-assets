@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>10min Countdown</title>
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -13,7 +13,7 @@
       <h1 id="timer">10:00</h1>
     </div>
 
-    <audio id="alarm" src="assets/alarm.m4a" preload="auto"></audio>
+    <audio id="alarm" src="assets/alarm.mp3" preload="auto"></audio>
   </body>
   <script>
     // Função para formatar o tempo em minutos e segundos
@@ -52,7 +52,7 @@
     }
 
     // Definir o tempo inicial em segundos (10 minutos)
-    let timeLeft = 10 * 60;
+    let timeLeft = 0.1 * 60;
 
     // Atualizar o contador a cada segundo
     const timerInterval = setInterval(updateTimer, 1000);
