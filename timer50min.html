@@ -49,6 +49,9 @@
 
       localStorage.setItem("counter", counterinit);
     }
+
+
+
     // Função para formatar o tempo em minutos e segundos
     function formatTime(minutes, seconds) {
       return `${minutes.toString().padStart(2, "0")}:${seconds
@@ -57,7 +60,6 @@
     }
 
     // Função para atualizar o contador
-
     function updateTimer() {
       const timerElement = document.getElementById("timer");
 
@@ -72,9 +74,8 @@
       if (timeLeft === 0) {
         clearInterval(timerInterval);
         timerElement.textContent = "00:00"; // Mostrar "00:00" quando o tempo acabar
-        playAlarm(); // Tocar o alarme
         document.getElementsByClassName("counter")[0].disabled = false;
-
+        playAlarm(); // Tocar o alarme
       } else {
         // Decrementar o tempo restante apenas se não for zero
         timeLeft--;
