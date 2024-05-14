@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="focus">
-      <h3 id="counter" class="h3">[00/??]</h3>
+      <h3 id="counter" class="h3">[1° session]</h3>
       <h1 id="timer">50:00</h1>
     </div>
 
@@ -29,23 +29,23 @@
     counterElement = document.getElementById("counter");
     counterElement.textContent = `[${counterinit
       .toString()
-      .padStart(2, "0")}/??]`;
+      .padStart(2, "0")}° session]`;
 
     function counter() {
       counterinit++;
       counterElement.textContent = `[${counterinit
         .toString()
-        .padStart(2, "0")}/??]`;
+        .padStart(2, "0")}° session]`;
 
       document.getElementsByClassName("counter")[0].disabled = true;
       localStorage.setItem("counter", counterinit);
     }
 
     function resetCounter() {
-      counterinit = 0;
+      counterinit = 1;
       counterElement.textContent = `[${counterinit
         .toString()
-        .padStart(2, "0")}/10]`;
+        .padStart(2, "0")}° session]`;
 
       localStorage.setItem("counter", counterinit);
     }
