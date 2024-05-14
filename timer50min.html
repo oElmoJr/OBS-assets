@@ -27,15 +27,11 @@
   <script>
     counterinit = localStorage.getItem("counter");
     counterElement = document.getElementById("counter");
-    counterElement.textContent = `${counterinit
-      .toString()
-      .padStart(2, "0")}° session`;
+    counterElement.textContent = `${counterinit.toString()}° session`;
 
     function counter() {
       counterinit++;
-      counterElement.textContent = `${counterinit
-        .toString()
-        .padStart(2, "0")}° session`;
+      counterElement.textContent = `${counterinit.toString()}° session`;
 
       document.getElementsByClassName("counter")[0].disabled = true;
       localStorage.setItem("counter", counterinit);
@@ -43,9 +39,7 @@
 
     function resetCounter() {
       counterinit = 1;
-      counterElement.textContent = `${counterinit
-        .toString()
-        .padStart(2, "0")}° session`;
+      counterElement.textContent = `${counterinit.toString()}° session`;
 
       localStorage.setItem("counter", counterinit);
     }
