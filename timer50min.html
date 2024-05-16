@@ -38,8 +38,8 @@
     }
 
     function resetCounter() {
-      counterinit = 1;
-      counterElement.textContent = `${counterinit.toString()}° session`;
+      counterinit = 0;
+      counterElement.textContent = `Last session`;
 
       localStorage.setItem("counter", counterinit);
     }
